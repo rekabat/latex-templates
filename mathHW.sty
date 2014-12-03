@@ -6,7 +6,7 @@
 % contains special environments for homework:
 %     hwproblem, hwsolution
 % contains special macros for homework:
-%     hwprob, hwanswer, hwplaceholder
+%     hwprob, hwanswer, hwplaceholder, todo
 % contains useful all-purpose macros:
 %     n, lessSeparation, append
 
@@ -17,7 +17,7 @@
 % --------------------------------------------------------------
 %                       Some packages
 % --------------------------------------------------------------
- 
+
 \usepackage[top=0.5in, bottom=1in, left=0.5in, right=0.5in]{geometry}
 % \usepackage[margin=0.5in]{geometry}
 
@@ -65,7 +65,7 @@
 \def\hwmaketitledisclaimer{
     \begin{center}
         \textbf{\@hwdisclaimer}
-        
+
         \Large\textbf{Homework \@hwnumber}
 
         \footnotesize\text{\@hwcourse}
@@ -148,7 +148,7 @@
 
 % \newcommand{\N}{\mathbb{N}}
 % \newcommand{\Z}{\mathbb{Z}}
- 
+
 % \newenvironment{theorem}[2][Theorem]{\begin{trivlist}
 % \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 % \newenvironment{lemma}[2][Lemma]{\begin{trivlist}
@@ -224,6 +224,10 @@
 %     \hrule
 % }
 
+
+\newcommand{\todo}[1]{\textsc{{\color{red}#1}}}
+
+
 % --------------------------------------------------------------
 %                        Definitions
 % --------------------------------------------------------------
@@ -240,11 +244,13 @@
 \newcommand   {\abs}[1]    {\mathopen{}\left|{#1}\right|\mathclose{}}
 \newcommand   {\floor}[1]  {\mathopen{}\lfloor{#1}\rfloor\mathclose{}}
 \newcommand   {\ceil}[1]   {\mathopen{}\lceil{#1}\rceil\mathclose{}}
-\renewcommand {\vec}[1]    {\mathbf{#1}}          % overwrite
+% \renewcommand {\vec}[1]    {\mathbf{#1}}          % overwrite
+\renewcommand {\vec}[1]    {\boldsymbol{#1}}
 \newcommand   {\norm}[1]   {\mathopen{}\left\|{#1}\right\|\mathclose{}}
 \newcommand   {\inner}[2]  {\mathopen{}\left<{#1,#2}\right>\mathclose{}}
 \newcommand   {\krn}[3][]  {k_{#1}\p{#2,#3}}
 \newcommand   {\krnv}[3][] {k_{#1}\p{\vec{#2},\vec{#3}}}
+\newcommand   {\evaluatedat}[2] {\biggr\rvert_{#1}^{#2}}
 
 
 
