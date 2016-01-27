@@ -1,0 +1,147 @@
+% --------------------------------------------------------------
+%                       Initialize
+% --------------------------------------------------------------
+
+\documentclass{beamer}
+
+
+\usepackage{mathHW}
+% contains special macros for math environment:
+%     unit, p, set, abs, floor, ceil, vec, norm, inner, kernel
+% contains special environments for homework:
+%     hwproblem, hwsolution
+% contains special macros for homework:
+%     hwprob, hwanswer, hwplaceholder
+% contains useful all-purpose macros:
+%     n, lessSeparation, append
+
+
+
+% --------------------------------------------------------------
+%                    Beginning of Document
+% --------------------------------------------------------------
+
+\title[Short Title]{The Very Long Title that may or may not Contain the Short Title}
+\author{Troy Baker}
+\institute{University of Florida}
+\date{April 14, 2015}
+
+\usetheme{CambridgeUS}
+\usecolortheme{dolphin}
+\begin{document}
+
+% --------------------------------------------------------------
+%                           Title
+% --------------------------------------------------------------
+
+\beamertemplatenavigationsymbolsempty
+
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[circle]
+
+\setbeamertemplate{section in toc}[circle]
+% \setbeamertemplate{subsection in toc}[circle]
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Layout}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+% --------------------------------------------------------------
+%                           Body
+% --------------------------------------------------------------
+
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Introduction}
+\subsection{Definitions}
+\begin{frame}{Introduction}
+    This is a short introduction to Beamer class.
+    \pause
+    This is some more.
+\end{frame}
+
+
+\begin{frame}{Blocks}
+    \begin{block}{Block title}
+        This is a block in blue
+    \end{block}
+
+    \begin{definition}
+        Definition
+    \end{definition}
+
+    \begin{theorem}
+        Theorem
+    \end{theorem}
+
+    \begin{proof}
+        Proof
+    \end{proof}
+\end{frame}
+
+
+\begin{frame}{Test}
+    \begin{itemize}
+        \item<2-> appears from slide 2 on
+        \begin{itemize}
+            \item Sub list
+        \end{itemize}
+        \item<2-4> appears from slides 2-4
+        \item<4> appears on slide 4
+        \item<5-> appears from slide 5 on
+    \end{itemize}
+
+    \uncover<4-5>{
+        Appear from slides 4-5
+    }
+
+    \invisible<2>{HI!} \alt<2>{BYE!}{oops}
+    \alert<2>{Red words on slide 2.} \color<2>{green}{Green words on slide 2.} %remove #s to make always alert or green
+
+
+    \begin{itemize}
+        \item Language used by Beamer: L\uncover<2->{A}TEX
+        \item Language used by Beamer: L\only<2->{A}TEX
+    \end{itemize}
+
+    \begin{enumerate}[<+-| alert@+>]
+        \item L
+        \item A
+        \item T
+        \item E
+        \item X
+        \item !
+        \begin{enumerate}
+            \item Sub items
+        \end{enumerate}
+    \end{enumerate}
+\end{frame}
+
+\subsection{Sub nothing}
+\begin{frame}{What?}
+\end{frame}
+
+\section{Nothing}
+\begin{frame}{do?}
+\end{frame}
+
+\subsection{Sub nothing2}
+\begin{frame}{you want?}
+\end{frame}
+
+
+% --------------------------------------------------------------
+%                        End of Body
+% --------------------------------------------------------------
+
+\end{document}
+
+% --------------------------------------------------------------
+%                       End of Document
+% --------------------------------------------------------------

@@ -1,13 +1,17 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{mathHW}
 
-% contains special macros for math environment:
-%     unit, p, set, abs, floor, ceil, vec, norm, inner, krn[sub]{1}{2}, krnv
-% contains special environments for homework:
+
+% Special macros for math environment:
+%     unit, p (parentheses), set, abs, floor, ceil, vec, norm, inner,
+%     krn[sub]{1}{2}, krnv, evaluatedat, dgr (degrees)
+% Convenient complexity notation:
+%     bigO{}, bigOn, bigOlogn, bigOnlogn, bigOnsq
+% Special environments for homework:
 %     hwproblem, hwsolution
-% contains special macros for homework:
+% Special macros for homework:
 %     hwprob, hwanswer, hwplaceholder, todo
-% contains useful all-purpose macros:
+% Useful all-purpose macros:
 %     n, lessSeparation, append
 
 
@@ -18,17 +22,23 @@
 %                       Some packages
 % --------------------------------------------------------------
 
-\usepackage[top=0.5in, bottom=1in, left=0.5in, right=0.5in]{geometry}
-% \usepackage[margin=0.5in]{geometry}
-
 \usepackage{amsmath}
 % \usepackage{amsthm}
 \usepackage{amssymb}
+\usepackage[mathscr]{euscript}
 % \usepackage{algpseudocode}
 % \usepackage{breqn}
 \usepackage{qtree}
 
 \usepackage{enumerate}
+
+\usepackage{color}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+\usepackage{tikz}
+\newcommand{\tedge}[5]{\draw[#3] (#1)-- node[e, #5] (e#4) {#4} (#2)}
 
 
 % --------------------------------------------------------------
@@ -252,6 +262,13 @@
 \newcommand   {\krnv}[3][] {k_{#1}\p{\vec{#2},\vec{#3}}}
 \newcommand   {\evaluatedat}[2] {\biggr\rvert_{#1}^{#2}}
 
+\newcommand{\dgr}{^{\circ}}
+
+\newcommand{\bigO}[1]{$O\p{#1}$}
+\newcommand{\bigOn}{\bigO{n}}
+\newcommand{\bigOlogn}{\bigO{\log{n}}}
+\newcommand{\bigOnlogn}{\bigO{n\log{n}}}
+\newcommand{\bigOnsq}{\bigO{n^2}}
 
 
 % --------------------------------------------------------------
