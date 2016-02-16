@@ -4,21 +4,11 @@
 
 \documentclass{beamer}
 
-
-\usepackage{mathHW}
-% contains special macros for math environment:
-%     unit, p, set, abs, floor, ceil, vec, norm, inner, kernel
-% contains special environments for homework:
-%     hwproblem, hwsolution
-% contains special macros for homework:
-%     hwprob, hwanswer, hwplaceholder
-% contains useful all-purpose macros:
-%     n, lessSeparation, append
-
+\usepackage{mySlides}
 
 
 % --------------------------------------------------------------
-%                    Beginning of Document
+%                          Title
 % --------------------------------------------------------------
 
 \title[Short Title]{The Very Long Title that may or may not Contain the Short Title}
@@ -26,28 +16,11 @@
 \institute{University of Florida}
 \date{April 14, 2015}
 
-\usetheme{CambridgeUS}
-\usecolortheme{dolphin}
+% --------------------------------------------------------------
+%                    Beginning of Document
+% --------------------------------------------------------------
+
 \begin{document}
-
-% --------------------------------------------------------------
-%                           Title
-% --------------------------------------------------------------
-
-\beamertemplatenavigationsymbolsempty
-
-\setbeamertemplate{itemize items}[circle]
-\setbeamertemplate{enumerate items}[circle]
-
-\setbeamertemplate{section in toc}[circle]
-% \setbeamertemplate{subsection in toc}[circle]
-\AtBeginSubsection[]
-{
-  \begin{frame}<beamer>
-    \frametitle{Layout}
-    \tableofcontents[currentsection,currentsubsection]
-  \end{frame}
-}
 
 % --------------------------------------------------------------
 %                           Body
@@ -125,6 +98,9 @@
 
 \subsection{Sub nothing}
 \begin{frame}{What?}
+    \begin{algo}[\textsc{Demo}($X$)]
+        This is an algo.
+    \end{algo}
 \end{frame}
 
 \section{Nothing}

@@ -1,44 +1,47 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{mathHW}
+\ProvidesPackage{myHomework}
 
 
-% Special macros for math environment:
-%     unit, p (parentheses), set, abs, floor, ceil, vec, norm, inner,
-%     krn[sub]{1}{2}, krnv, evaluatedat, dgr (degrees)
-% Convenient complexity notation:
-%     bigO{}, bigOn, bigOlogn, bigOnlogn, bigOnsq
+
+
 % Special environments for homework:
 %     hwproblem, hwsolution
 % Special macros for homework:
-%     hwprob, hwanswer, hwplaceholder, todo
-% Useful all-purpose macros:
-%     n, lessSeparation, append
+%     hwprob, hwanswer, hwplaceholder
 
 
 
 % \tiny, \scriptsize, \footnotesize, \small, \normalsize, \large, \Large, \LARGE, \huge, \Huge
 
+
 % --------------------------------------------------------------
-%                       Some packages
+%                          Style
 % --------------------------------------------------------------
 
-\usepackage{amsmath}
-% \usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage[mathscr]{euscript}
-% \usepackage{algpseudocode}
-% \usepackage{breqn}
-\usepackage{qtree}
+\usepackage[top=1in, bottom=1.5in, left=1in, right=1in]{geometry}
+% \usepackage[top=0.5in, bottom=1in, left=0.5in, right=0.5in]{geometry}
+% \usepackage[margin=0.5in]{geometry}
 
-\usepackage{enumerate}
 
-\usepackage{color}
+% --------------------------------------------------------------
+%                       Header and Footer
+% --------------------------------------------------------------
 
-\usepackage{graphicx}
-\usepackage{subcaption}
+%specifying header stuff
+\usepackage{fancyhdr}
+\usepackage{lastpage}
 
-\usepackage{tikz}
-\newcommand{\tedge}[5]{\draw[#3] (#1)-- node[e, #5] (e#4) {#4} (#2)}
+\def\hwmakefooter{
+    \pagestyle{fancy}
+    \lhead{}
+    \chead{}
+    \rhead{}
+    \lfoot{}
+    \cfoot{}
+    \rfoot{\@hwauthor{} -- \textbf{\thepage} of \textbf{\pageref{LastPage}}}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0.8pt}
+}
 
 
 % --------------------------------------------------------------
@@ -88,26 +91,25 @@
     \end{center}
 }
 
-
 % --------------------------------------------------------------
-%                       Header and Footer
+%                       Some packages
 % --------------------------------------------------------------
 
-%specifying header stuff
-\usepackage{fancyhdr}
-\usepackage{lastpage}
+\usepackage{amsmath}
 
-\def\hwmakefooter{
-    \pagestyle{fancy}
-    \lhead{}
-    \chead{}
-    \rhead{}
-    \lfoot{}
-    \cfoot{}
-    \rfoot{\@hwauthor{} -- \textbf{\thepage} of \textbf{\pageref{LastPage}}}
-    \renewcommand{\headrulewidth}{0pt}
-    \renewcommand{\footrulewidth}{0.8pt}
-}
+
+% \usepackage{algpseudocode}
+% \usepackage{breqn}
+\usepackage{qtree}
+
+\usepackage{enumerate}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+\usepackage{tikz}
+\newcommand{\tedge}[5]{\draw[#3] (#1)-- node[e, #5] (e#4) {#4} (#2)}
+
 
 
 % --------------------------------------------------------------
@@ -152,26 +154,24 @@
     % {~=}{{$\neq$}}1 %      \neq
 }
 
+
+% \newenvironment{myalgo}[2][Algorithm]{
+%     \hrule
+%     #1 {\bf #2}
+%     \hrule
+%     \VerbatimEnvironment
+%     % \begin{verbatim}
+% }
+% {
+%     % \end{verbatim}
+%     \hrule
+% }
+
+
+
 % --------------------------------------------------------------
-%                     "New" Declarations
+%                     Other HW stuff
 % --------------------------------------------------------------
-
-% \newcommand{\N}{\mathbb{N}}
-% \newcommand{\Z}{\mathbb{Z}}
-
-% \newenvironment{theorem}[2][Theorem]{\begin{trivlist}
-% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-% \newenvironment{lemma}[2][Lemma]{\begin{trivlist}
-% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-% \newenvironment{exercise}[2][Exercise]{\begin{trivlist}
-% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-% \newenvironment{question}[2][Question]{\begin{trivlist}
-% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-% \newenvironment{corollary}[2][Corollary]{\begin{trivlist}
-% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-
-
-
 
 
 \newcommand{\hwprob}[1]{
@@ -222,64 +222,7 @@
 
 \newcommand{\hwplaceholder}{\vskip\baselineskip\hrule\hrule\hrule\hrule\hrule\hrule\hrule\hrule\hrule\hrule\vskip\baselineskip}
 
-% \newenvironment{myalgo}[2][Algorithm]{
-%     \hrule
-%     #1 {\bf #2}
-%     \hrule
-%     \VerbatimEnvironment
-%     % \begin{verbatim}
-% }
-% {
-%     % \end{verbatim}
-%     \hrule
-% }
 
-
-\newcommand{\todo}[1]{\textsc{{\color{red}#1}}}
-
-
-% --------------------------------------------------------------
-%                        Definitions
-% --------------------------------------------------------------
-
-\def\n{\vskip\baselineskip}
-% \def\.{\item}
-\def\lessSeparation{\vspace*{-\baselineskip}}
-
-% mathematical notation
-% \mathopen{}\left. and \right.\mathclose{} get rid of the spurious space automatically inserted. Now it renders as if you weren't using right or left (w/ regards to the space)
-\newcommand   {\unit}[1]   {\text{ #1}}
-\newcommand   {\p}[1]      {\mathopen{}\left({#1}\right)\mathclose{}}
-\newcommand   {\set}[1]    {\mathopen{}\left\{{#1}\right\}\mathclose{}}
-\newcommand   {\abs}[1]    {\mathopen{}\left|{#1}\right|\mathclose{}}
-\newcommand   {\floor}[1]  {\mathopen{}\lfloor{#1}\rfloor\mathclose{}}
-\newcommand   {\ceil}[1]   {\mathopen{}\lceil{#1}\rceil\mathclose{}}
-% \renewcommand {\vec}[1]    {\mathbf{#1}}          % overwrite
-\renewcommand {\vec}[1]    {\boldsymbol{#1}}
-\newcommand   {\norm}[1]   {\mathopen{}\left\|{#1}\right\|\mathclose{}}
-\newcommand   {\inner}[2]  {\mathopen{}\left<{#1,#2}\right>\mathclose{}}
-\newcommand   {\krn}[3][]  {k_{#1}\p{#2,#3}}
-\newcommand   {\krnv}[3][] {k_{#1}\p{\vec{#2},\vec{#3}}}
-\newcommand   {\evaluatedat}[2] {\biggr\rvert_{#1}^{#2}}
-
-\newcommand{\dgr}{^{\circ}}
-
-\newcommand{\bigO}[1]{$O\p{#1}$}
-\newcommand{\bigOn}{\bigO{n}}
-\newcommand{\bigOlogn}{\bigO{\log{n}}}
-\newcommand{\bigOnlogn}{\bigO{n\log{n}}}
-\newcommand{\bigOnsq}{\bigO{n^2}}
-
-
-% --------------------------------------------------------------
-%                       Random things
-% --------------------------------------------------------------
-
-% not so useful, more a demo of if. \pred{1}{0}{1}
-\newcommand{\tnt}[3]{\if0#1\if0#3{\textbf{\underline{NT}}}\else{NT}\fi\else\if0#3{\textbf{\underline{T}}}\else{T}\fi\fi/\if0#2\if1#3{\textbf{\underline{NT}}}\else{NT}\fi\else\if1#3{\textbf{\underline{T}}}\else{T}\fi\fi}
-
-% give it a macro and text and it redefines that macro with the text appended. \append{\test}{hi}
-\newcommand{\append}[2]{\expandafter\def\expandafter#1\expandafter{#1#2}}
 
 
 

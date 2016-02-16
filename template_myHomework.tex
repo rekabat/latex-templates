@@ -3,23 +3,28 @@
 % --------------------------------------------------------------
 
 \documentclass[10pt]{article}
-\usepackage[top=1in, bottom=1.5in, left=1in, right=1in]{geometry}
-% \usepackage[top=0.5in, bottom=1in, left=0.5in, right=0.5in]{geometry}
-% \usepackage[margin=0.5in]{geometry}
 
 
-\usepackage{mathHW}
-% Special macros for math environment:
-%     unit, p (parentheses), set, abs, floor, ceil, vec, norm, inner,
-%     krn[sub]{1}{2}, krnv, evaluatedat, dgr (degrees)
-% Convenient complexity notation:
-%     bigO{}, bigOn, bigOlogn, bigOnlogn, bigOnsq
+\usepackage{myHomework}
 % Special environments for homework:
 %     hwproblem, hwsolution
 % Special macros for homework:
-%     hwprob, hwanswer, hwplaceholder, todo
-% Useful all-purpose macros:
-%     n, lessSeparation, append
+%     hwprob, hwanswer, hwplaceholder
+
+\usepackage{myMath}
+% All-purpose macros:
+%     todo
+% Macros for spacing:
+%     n, lessSeparation
+% Special macros for math environment:
+%     unit, p (parentheses), set, abs, floor, ceil, vec, norm, inner,
+%     krn[sub]{1}{2}, krnv, evaluatedat, dgr (degrees), powerset
+% Convenient complexity notation:
+%     bigO{}, bigOn, bigOlogn, bigOnlogn, bigOnsq
+% Others (experimental):
+%     append
+
+
 
 % --------------------------------------------------------------
 %                    Beginning of Document
@@ -32,11 +37,9 @@
 % --------------------------------------------------------------
 
 \hwnumber{X}
-\hwcourse{CAP 6610: Machine Learning}
-% \hwcourse{COT 5405: Analysis of Algorithms}
-% \hwcourse{CDA 5155: Computer Architecture}
+\hwcourse{CIS 6930: Computational Computing}
 \hwauthor{Troy Baker}
-\hwdate  {Month Day, 2014}
+\hwdate  {Month Day, 2000}
 \hwdisclaimer{I have neither given nor received any unauthorized aid on this assignment.}
 
 
@@ -53,45 +56,45 @@
 \hwprob{1}
 
 \begin{hwproblem}{X}
-Text
-\begin{enumerate}[gg(a).]
-    \item Subproblem1
-    \item Subproblem2
-\end{enumerate}
+    Text
+    \begin{enumerate}[gg(a).]
+        \item Subproblem1
+        \item Subproblem2
+    \end{enumerate}
 \end{hwproblem}
 
 \begin{hwsolution}{X.1}
-Some code:
-\begin{lstlisting}
-func foo(adf) {
-    return bar
-}
-\end{lstlisting}
-\newpage
-Some Tree:
-\Tree
-[.1a
-    [.2a
-        3a
-        3b
+    Some code:
+    \begin{lstlisting}
+    func foo(adf) {
+        return bar
+    }
+    \end{lstlisting}
+    \newpage
+    Some Tree:
+    \Tree
+    [.1a
+        [.2a
+            3a
+            3b
+        ]
+        [.2b
+            3c
+            3d
+        ]
     ]
-    [.2b
-        3c
-        3d
-    ]
-]
 \end{hwsolution}
 
 \begin{hwsolution}{X.2}
-Some function $f(n)$:
+    Some function $f(n)$:
 
-\[
-    f(n)=
-    \begin{cases}
-    1, & \text{if } n=1\\
-    3, & \text{if } n\geq2
-    \end{cases}
-\]
+    \[
+        f(n)=
+        \begin{cases}
+        1, & \text{if } n=1\\
+        3, & \text{if } n\geq2
+        \end{cases}
+    \]
 \end{hwsolution}
 
 
@@ -99,12 +102,12 @@ Some function $f(n)$:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hwproblem}{1}
-Problem
+    Problem
 \end{hwproblem}
 
 \begin{hwsolution}{1}
 
-\hwplaceholder
+    \hwplaceholder
 \end{hwsolution}
 
 
@@ -112,12 +115,12 @@ Problem
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hwproblem}{2}
-Problem
+    Problem
 \end{hwproblem}
 
 \begin{hwsolution}{2}
-
-\hwplaceholder
+    $S=\powerset{\set{4,8,k}}$
+    \hwplaceholder
 \end{hwsolution}
 
 

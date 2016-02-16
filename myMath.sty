@@ -1,0 +1,109 @@
+
+\usepackage{amsmath}
+% \usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[mathscr]{euscript}
+
+
+
+% All-purpose macros:
+%     todo
+% Macros for spacing:
+%     n, lessSeparation
+% Special macros for math environment:
+%     unit, p (parentheses), set, abs, floor, ceil, vec, norm, inner,
+%     krn[sub]{1}{2}, krnv, evaluatedat, dgr (degrees), powerset
+% Convenient complexity notation:
+%     bigO{}, bigOn, bigOlogn, bigOnlogn, bigOnsq
+% Others (experimental):
+%     append
+
+
+
+
+% --------------------------------------------------------------
+%                        All Purpose
+% --------------------------------------------------------------
+
+\usepackage{color}
+\newcommand{\todo}[1]{\textsc{{\color{red}#1}}}
+
+
+% --------------------------------------------------------------
+%                        Spacing
+% --------------------------------------------------------------
+
+\def\n{\vskip\baselineskip}
+% \def\.{\item}
+\def\lessSeparation{\vspace*{-\baselineskip}}
+
+
+
+% --------------------------------------------------------------
+%                          Math
+% --------------------------------------------------------------
+
+% mathematical notation
+% \mathopen{}\left. and \right.\mathclose{} get rid of the spurious space automatically inserted. Now it renders as if you weren't using right or left (w/ regards to the space)
+\newcommand   {\unit}[1]   {\text{ #1}}
+\newcommand   {\p}[1]      {\mathopen{}\left({#1}\right)\mathclose{}}
+\newcommand   {\set}[1]    {\mathopen{}\left\{{#1}\right\}\mathclose{}}
+\newcommand   {\abs}[1]    {\mathopen{}\left|{#1}\right|\mathclose{}}
+\newcommand   {\floor}[1]  {\mathopen{}\lfloor{#1}\rfloor\mathclose{}}
+\newcommand   {\ceil}[1]   {\mathopen{}\lceil{#1}\rceil\mathclose{}}
+% \renewcommand {\vec}[1]    {\mathbf{#1}}          % overwrite
+\renewcommand {\vec}[1]    {\boldsymbol{#1}}
+\newcommand   {\norm}[1]   {\mathopen{}\left\|{#1}\right\|\mathclose{}}
+\newcommand   {\inner}[2]  {\mathopen{}\left<{#1,#2}\right>\mathclose{}}
+\newcommand   {\krn}[3][]  {k_{#1}\p{#2,#3}}
+\newcommand   {\krnv}[3][] {k_{#1}\p{\vec{#2},\vec{#3}}}
+\newcommand   {\evaluatedat}[2] {\biggr\rvert_{#1}^{#2}}
+
+\newcommand{\dgr}{^{\circ}}
+
+\newcommand{\powerset}[1]{\mathcal{P}\p{#1}}
+
+
+% --------------------------------------------------------------
+%                        Complexity
+% --------------------------------------------------------------
+
+\newcommand{\bigO}[1]{$O\p{#1}$}
+\newcommand{\bigOn}{\bigO{n}}
+\newcommand{\bigOlogn}{\bigO{\log{n}}}
+\newcommand{\bigOnlogn}{\bigO{n\log{n}}}
+\newcommand{\bigOnsq}{\bigO{n^2}}
+
+
+% --------------------------------------------------------------
+%                       Random things
+% --------------------------------------------------------------
+
+% not so useful, more a demo of if. \pred{1}{0}{1}
+\newcommand{\tnt}[3]{\if0#1\if0#3{\textbf{\underline{NT}}}\else{NT}\fi\else\if0#3{\textbf{\underline{T}}}\else{T}\fi\fi/\if0#2\if1#3{\textbf{\underline{NT}}}\else{NT}\fi\else\if1#3{\textbf{\underline{T}}}\else{T}\fi\fi}
+
+% give it a macro and text and it redefines that macro with the text appended. \append{\test}{hi}
+\newcommand{\append}[2]{\expandafter\def\expandafter#1\expandafter{#1#2}}
+
+
+
+
+
+
+
+
+
+
+% \newcommand{\N}{\mathbb{N}}
+% \newcommand{\Z}{\mathbb{Z}}
+
+% \newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{question}[2][Question]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+% \newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+% \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
