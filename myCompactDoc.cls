@@ -65,7 +65,7 @@
 %%% footer
 \lfoot{}
 \cfoot{}
-\rfoot{Page \textbf{\thepage} of \textbf{\pageref{LastPage}}}
+\rfoot{Page \textbf{\thepage} of \textbf{\pageref*{LastPage}}}
 \renewcommand{\footrulewidth}{0.8pt}
 
 
@@ -89,5 +89,32 @@
     \end{center}
 }
 
+
+
+% --------------------------------------------------------------
+%                         Hyperref
+% --------------------------------------------------------------
+
+
+\ifx\pdfoutput\undefined                         %LaTeX
+    \RequirePackage[ps2pdf,bookmarks=true]{hyperref}
+\else                                            %PDFLaTeX
+    \RequirePackage[pdftex,bookmarks=true]{hyperref}
+\pdfadjustspacing=1
+\fi
+
+\hypersetup{ %
+    pdfauthor   = {\@author},
+    pdftitle    = {\@title},
+    pdfcreator  = {LaTeX with hyperref package},
+    pdfproducer = {dvips + ps2pdf},
+    colorlinks  = true,
+    citecolor   = blue
+}
+
+
+% --------------------------------------------------------------
+%                            End
+% --------------------------------------------------------------
 
 \endinput
