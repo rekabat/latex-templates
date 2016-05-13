@@ -3,6 +3,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{myCompactDoc}
 
+% --------------------------------------------------------------
+%                       Base class
+% --------------------------------------------------------------
+
 \LoadClass[10pt]{article}
 % \LoadClass[11pt]{article}
 
